@@ -4,18 +4,30 @@ from fastapi.openapi.docs import (
     get_swagger_ui_html,
     get_redoc_html
 )
-
-import uvicorn
 from pathlib import Path
+import uvicorn
+
+from app.settings import settings
+from app.api.api_v1.api import api_router
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-app = FastAPI(docs_url=None, redoc_url=None)
+app = FastAPI(
+    title=settings.PROJECT_NAME,
+    version=settings.PROJECT_VERSION,
+    description=settings.PROJECT_DESCRIPTION,
+    docs_url=None,
+    redoc_url=None
+)
 
-# 挂载静态文件目录（相对于项目根目录）
+# Include API routes
+app.include_router(api_router, prefix=settings.API_V1_STR)
+
+# Mount static files directory
 app.mount("/static", StaticFiles(directory=BASE_DIR/'static'), name="static")
 
-@app.get("/docs",include_in_schema=False)
+
+@app.get("/docs", include_in_schema=False)
 def custom_swagger_ui_html():
     return get_swagger_ui_html(
         openapi_url=app.openapi_url,
@@ -24,7 +36,8 @@ def custom_swagger_ui_html():
         swagger_css_url="/static/swagger-ui.css"
     )
 
-@app.get("/redoc",include_in_schema=False)
+
+@app.get("/redoc", include_in_schema=False)
 async def redoc_html():
     return get_redoc_html(
         openapi_url=app.openapi_url,
@@ -32,10 +45,11 @@ async def redoc_html():
         redoc_js_url="/static/redoc.standalone.js"
     )
 
+
 @app.get("/")
 def greet():
-    return {"Hello":"Fast API!"}
+    return {"Hello": "Fast API!"}
 
 
 if __name__ == "__main__":
-    uvicorn.run(app,host="0.0.0.0",port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
