@@ -1,4 +1,3 @@
-import os
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.openapi.docs import (
@@ -7,14 +6,17 @@ from fastapi.openapi.docs import (
 )
 from pathlib import Path
 import uvicorn
+
 from core.config import settings
+from core.logger import setup_logging   
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 app = FastAPI(
     title=settings.APP_NAME,
     docs_url=None,
-    redoc_url=None
+    redoc_url=None,
+    on_startup=[setup_logging],
 )
 
 

@@ -1,0 +1,98 @@
+2025-09-14 23:22:10.221 | None | INFO     | process [9940] | thread [16820] | logging:callHandlers:1762 - Application startup complete.
+2025-09-14 23:22:10.221 | None | INFO     | process [9940] | thread [16820] | logging:callHandlers:1762 - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-09-14 23:25:02.286 | None | INFO     | process [9940] | thread [16820] | logging:callHandlers:1762 - Shutting down
+2025-09-14 23:25:02.378 | None | INFO     | process [9940] | thread [16820] | logging:callHandlers:1762 - Waiting for application shutdown.
+2025-09-14 23:25:02.378 | None | INFO     | process [9940] | thread [16820] | logging:callHandlers:1762 - Application shutdown complete.
+2025-09-14 23:25:02.378 | None | INFO     | process [9940] | thread [16820] | logging:callHandlers:1762 - Finished server process [9940]
+2025-09-14 23:25:35.341 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - Application startup complete.
+2025-09-14 23:25:35.341 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - Application startup complete.
+2025-09-14 23:25:35.342 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-09-14 23:25:35.342 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-09-14 23:25:52.937 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - 127.0.0.1:11359 - "GET /docs HTTP/1.1" 200
+2025-09-14 23:25:53.003 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - 127.0.0.1:11359 - "GET /static/swagger-ui.css HTTP/1.1" 304
+2025-09-14 23:25:53.004 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - 127.0.0.1:11360 - "GET /static/swagger-ui-bundle.js HTTP/1.1" 304
+2025-09-14 23:25:53.093 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - 127.0.0.1:11360 - "GET /openapi.json HTTP/1.1" 200
+2025-09-14 23:26:00.146 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - 127.0.0.1:11361 - "GET / HTTP/1.1" 200
+2025-09-14 23:26:02.159 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - 127.0.0.1:11361 - "GET / HTTP/1.1" 200
+2025-09-14 23:27:32.151 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - Shutting down
+2025-09-14 23:27:32.151 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - Shutting down
+2025-09-14 23:27:32.259 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - Waiting for application shutdown.
+2025-09-14 23:27:32.259 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - Waiting for application shutdown.
+2025-09-14 23:27:32.259 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - Application shutdown complete.
+2025-09-14 23:27:32.259 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - Application shutdown complete.
+2025-09-14 23:27:32.260 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - Finished server process [8512]
+2025-09-14 23:27:32.260 | None | INFO     | process [8512] | thread [33736] | logging:callHandlers:1762 - Finished server process [8512]
+2025-09-14 23:27:38.912 | None | INFO     | process [23900] | thread [33852] | logging:callHandlers:1762 - Application startup complete.
+2025-09-14 23:27:38.913 | None | INFO     | process [23900] | thread [33852] | logging:callHandlers:1762 - Application startup complete.
+2025-09-14 23:27:38.913 | None | INFO     | process [23900] | thread [33852] | logging:callHandlers:1762 - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-09-14 23:27:38.913 | None | INFO     | process [23900] | thread [33852] | logging:callHandlers:1762 - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-09-14 23:28:02.197 | None | INFO     | process [23900] | thread [33852] | logging:callHandlers:1762 - Shutting down
+2025-09-14 23:28:02.197 | None | INFO     | process [23900] | thread [33852] | logging:callHandlers:1762 - Shutting down
+2025-09-14 23:28:02.306 | None | INFO     | process [23900] | thread [33852] | logging:callHandlers:1762 - Waiting for application shutdown.
+2025-09-14 23:28:02.306 | None | INFO     | process [23900] | thread [33852] | logging:callHandlers:1762 - Waiting for application shutdown.
+2025-09-14 23:28:02.306 | None | INFO     | process [23900] | thread [33852] | logging:callHandlers:1762 - Application shutdown complete.
+2025-09-14 23:28:02.306 | None | INFO     | process [23900] | thread [33852] | logging:callHandlers:1762 - Application shutdown complete.
+2025-09-14 23:28:02.306 | None | INFO     | process [23900] | thread [33852] | logging:callHandlers:1762 - Finished server process [23900]
+2025-09-14 23:28:02.306 | None | INFO     | process [23900] | thread [33852] | logging:callHandlers:1762 - Finished server process [23900]
+2025-09-14 23:30:13.514 | None | INFO     | process [29220] | thread [32804] | logging:callHandlers:1762 - Application startup complete.
+2025-09-14 23:30:13.515 | None | INFO     | process [29220] | thread [32804] | logging:callHandlers:1762 - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-09-14 23:30:26.673 | None | INFO     | process [29220] | thread [32804] | logging:callHandlers:1762 - Shutting down
+2025-09-14 23:30:26.783 | None | INFO     | process [29220] | thread [32804] | logging:callHandlers:1762 - Waiting for application shutdown.
+2025-09-14 23:30:26.783 | None | INFO     | process [29220] | thread [32804] | logging:callHandlers:1762 - Application shutdown complete.
+2025-09-14 23:30:26.783 | None | INFO     | process [29220] | thread [32804] | logging:callHandlers:1762 - Finished server process [29220]
+2025-09-14 23:30:42.912 | None | INFO     | process [25496] | thread [27060] | logging:callHandlers:1762 - Application startup complete.
+2025-09-14 23:30:42.912 | None | INFO     | process [25496] | thread [27060] | logging:callHandlers:1762 - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-09-14 23:31:28.710 | None | INFO     | process [25496] | thread [27060] | logging:callHandlers:1762 - Shutting down
+2025-09-14 23:31:28.835 | None | INFO     | process [25496] | thread [27060] | logging:callHandlers:1762 - Finished server process [25496]
+2025-09-14 23:31:28.838 | None | ERROR    | process [25496] | thread [27060] | logging:callHandlers:1762 - Traceback (most recent call last):
+  File "C:\Users\sudal\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\sudal\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sudal\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\asyncio\base_events.py", line 678, in run_until_complete
+    self.run_forever()
+  File "C:\Users\sudal\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\asyncio\windows_events.py", line 322, in run_forever
+    super().run_forever()
+  File "C:\Users\sudal\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\asyncio\base_events.py", line 645, in run_forever
+    self._run_once()
+  File "C:\Users\sudal\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\asyncio\base_events.py", line 1999, in _run_once
+    handle._run()
+  File "C:\Users\sudal\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\file\projects\python_project\p\fast-api-demo\.venv\Lib\site-packages\uvicorn\server.py", line 70, in serve
+    with self.capture_signals():
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sudal\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "D:\file\projects\python_project\p\fast-api-demo\.venv\Lib\site-packages\uvicorn\server.py", line 331, in capture_signals
+    signal.raise_signal(captured_signal)
+  File "C:\Users\sudal\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\asyncio\runners.py", line 157, in _on_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\file\projects\python_project\p\fast-api-demo\.venv\Lib\site-packages\starlette\routing.py", line 701, in lifespan
+    await receive()
+  File "D:\file\projects\python_project\p\fast-api-demo\.venv\Lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sudal\AppData\Roaming\uv\python\cpython-3.12.11-windows-x86_64-none\Lib\asyncio\queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+2025-09-14 23:31:38.310 | None | INFO     | process [23860] | thread [29108] | logging:callHandlers:1762 - Application startup complete.
+2025-09-14 23:31:38.311 | None | INFO     | process [23860] | thread [29108] | logging:callHandlers:1762 - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-09-14 23:33:00.329 | None | INFO     | process [23860] | thread [29108] | logging:callHandlers:1762 - Shutting down
+2025-09-14 23:33:00.436 | None | INFO     | process [23860] | thread [29108] | logging:callHandlers:1762 - Waiting for application shutdown.
+2025-09-14 23:33:00.437 | None | INFO     | process [23860] | thread [29108] | logging:callHandlers:1762 - Application shutdown complete.
+2025-09-14 23:33:00.437 | None | INFO     | process [23860] | thread [29108] | logging:callHandlers:1762 - Finished server process [23860]
+2025-09-14 23:45:43.229 | None | INFO     | process [31568] | thread [22800] | logging:callHandlers:1762 - Application startup complete.
+2025-09-14 23:45:43.229 | None | INFO     | process [31568] | thread [22800] | logging:callHandlers:1762 - Uvicorn running on http://0.0.0.0:8844 (Press CTRL+C to quit)
+2025-09-14 23:45:49.329 | None | INFO     | process [31568] | thread [22800] | logging:callHandlers:1762 - Shutting down
+2025-09-14 23:45:49.436 | None | INFO     | process [31568] | thread [22800] | logging:callHandlers:1762 - Waiting for application shutdown.
+2025-09-14 23:45:49.436 | None | INFO     | process [31568] | thread [22800] | logging:callHandlers:1762 - Application shutdown complete.
+2025-09-14 23:45:49.436 | None | INFO     | process [31568] | thread [22800] | logging:callHandlers:1762 - Finished server process [31568]
