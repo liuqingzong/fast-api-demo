@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.openapi.docs import (
@@ -6,22 +7,16 @@ from fastapi.openapi.docs import (
 )
 from pathlib import Path
 import uvicorn
-
-from app.settings import settings
-from app.api.api_v1.api import api_router
+from core.config import settings
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 app = FastAPI(
-    title=settings.PROJECT_NAME,
-    version=settings.PROJECT_VERSION,
-    description=settings.PROJECT_DESCRIPTION,
+    title=settings.APP_NAME,
     docs_url=None,
     redoc_url=None
 )
 
-# Include API routes
-app.include_router(api_router, prefix=settings.API_V1_STR)
 
 # Mount static files directory
 app.mount("/static", StaticFiles(directory=BASE_DIR/'static'), name="static")
@@ -48,8 +43,8 @@ async def redoc_html():
 
 @app.get("/")
 def greet():
-    return {"Hello": "Fast API!"}
+    return {"message": f"Hello from Fast API({settings.APP_ENV})!"}
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host=settings.APP_HOST, port=settings.APP_PORT)
