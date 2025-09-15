@@ -3,7 +3,7 @@ import sys
 import os
 from pathlib import Path
 from loguru import logger
-from core.config import settings
+from app.core.config import settings
 
 class InterceptHandler(logging.Handler):
     """

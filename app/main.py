@@ -7,8 +7,8 @@ from fastapi.openapi.docs import (
 from pathlib import Path
 import uvicorn
 
-from core.config import settings
-from core.logger import setup_logging   
+from app.core.config import settings
+from app.core.logger import setup_logging   
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
