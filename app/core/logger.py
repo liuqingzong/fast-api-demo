@@ -1,9 +1,16 @@
+import json
 import logging
-import sys
 import os
+import sys
+import time
 from pathlib import Path
+
 from loguru import logger
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.responses import Response
+
 from app.core.config import settings
+
 
 class InterceptHandler(logging.Handler):
     """
@@ -44,7 +51,7 @@ def setup_logging():
     # 定义日志格式
     log_format = (
         "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | {extra[request_id]} | "
-        "<level>{level: <8}</level> | "
+        "<level>{level:^4}</level> | "
         "process [<cyan>{process}</cyan>] | thread [<cyan>{thread}</cyan>] | "
         "<cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - "
         "<level>{message}</level>"
@@ -95,4 +102,49 @@ def setup_logging():
         _logger.setLevel(logging.INFO)
         _logger.handlers = []
         _logger.propagate = False
-        _logger.addHandler(InterceptHandler())
+        if '.' not in logger_name:
+            _logger.addHandler(InterceptHandler())
+
+
+class LoggingMiddleware(BaseHTTPMiddleware):
+    """
+    日志记录中间件
+    记录请求参数、IP、计算响应时间等
+    """
+    async def dispatch(self, request, call_next) -> Response:
+        ip = request.client.host    # 发起请求的ip
+        port = request.client.port  # 发起请求的端口
+        path = request.url.path     # 请求路径
+        method = request.method     # 请求方法
+        logger.info(f"{method} {path} {ip}:{port}")
+
+        if request.query_params:
+            logger.info(f"Query Params: {request.query_params}")
+
+        if method in ["POST", "PUT", "DELETE"]:
+            if "application/json" in request.headers.get("content-type",""):
+                # 读取原始字节
+                body_bytes = await request.body()
+                try:
+                    if body_bytes:
+                        body_str = body_bytes.decode("utf-8")
+                        # 尝试解析JSON
+                        try:
+                            body_json = json.load(body_str)
+                            logger.info(f"Request Body: {body_json}")
+                        except json.JSONDecodeError:
+                            logger.info("Request body is not JSON")
+                except Exception as e:
+                    logger.info(f"Error parsing request body: {e}")
+                # 重新赋值body
+                request._body=body_bytes
+
+        # 发起时间
+        start_time = time.time()
+
+        response = await call_next(request)
+
+        process_time = time.time() - start_time
+        logger.info(f"Process Time: {process_time*1000:.0f} ms")
+
+        return response

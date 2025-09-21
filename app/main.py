@@ -8,7 +8,7 @@ from pathlib import Path
 import uvicorn
 
 from app.core.config import settings
-from app.core.logger import setup_logging   
+from app.core.logger import setup_logging,LoggingMiddleware
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,6 +19,7 @@ app = FastAPI(
     on_startup=[setup_logging],
 )
 
+app.add_middleware(LoggingMiddleware)
 
 # Mount static files directory
 app.mount("/static", StaticFiles(directory=BASE_DIR/'static'), name="static")

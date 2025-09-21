@@ -2,7 +2,6 @@ import os
 from functools import lru_cache
 from pydantic_settings import BaseSettings,SettingsConfigDict
 
-# os.environ["ENV"] = "test"  # 设置环境变量以加载测试配置
 
 class Settings(BaseSettings):
     """应用配置类"""
@@ -16,13 +15,10 @@ class Settings(BaseSettings):
     LOG_FILE_PATH: str = "./logs/app.log"
 
     class Config:
-        print("加载文件")
         running_env = os.getenv("ENV", None)
-        print(running_env)
         env_file = "../.env"
         if(running_env != None):
             env_file = ("../.env",f"../.env.{running_env}")
-        print(env_file)
         model_config = SettingsConfigDict(env_file=env_file, env_file_encoding="utf-8")
 
 
@@ -30,4 +26,3 @@ def get_settings():
     return Settings()
 
 settings = get_settings()
-print(settings)
