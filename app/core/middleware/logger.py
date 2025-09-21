@@ -10,6 +10,7 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import Response
 
 from app.core.config import settings
+from app.core.middleware.trace_middelware import _logger_filter, add_request_id
 
 
 class InterceptHandler(logging.Handler):
@@ -45,7 +46,8 @@ def setup_logging():
     3. 配置 Python 标准日志系统，使用 InterceptHandler 重定向日志到 Loguru
     """
     # 移除 Loguru 默认处理器
-    logger.configure(extra={"request_id": None})
+    # logger.configure(extra={"request_id": None})
+    logger.configure(patcher=add_request_id)
     logger.remove()
     
     # 定义日志格式
@@ -82,7 +84,7 @@ def setup_logging():
         retention="30 days",
         encoding="utf-8",
         enqueue=True,  # 异步写入
-        # filter=correlation_id_filter
+        # filter=_logger_filter
     )
     logger.add(
         str(Path(log_dir, "error.log")),
@@ -92,7 +94,7 @@ def setup_logging():
         retention="30 days",
         encoding="utf-8",
         enqueue=True,  # 异步写入
-        # filter=correlation_id_filter
+        # filter=_logger_filter
     )
     
     # 配置 标准库日志 / 第三方库日志

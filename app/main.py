@@ -1,14 +1,16 @@
+from pathlib import Path
+
+import uvicorn
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
 from fastapi.openapi.docs import (
     get_swagger_ui_html,
     get_redoc_html
 )
-from pathlib import Path
-import uvicorn
+from fastapi.staticfiles import StaticFiles
 
 from app.core.config import settings
-from app.core.logger import setup_logging,LoggingMiddleware
+from app.core.middleware.logger import setup_logging, LoggingMiddleware
+from app.core.middleware.trace_middelware import add_request_id_middleware
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,6 +21,7 @@ app = FastAPI(
     on_startup=[setup_logging],
 )
 
+app.middleware("http")(add_request_id_middleware)
 app.add_middleware(LoggingMiddleware)
 
 # Mount static files directory
